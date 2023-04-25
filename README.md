@@ -1,6 +1,4 @@
-# hangman-dismemberer
-
------- Hangman: Dismemberer ------
+# ------ Hangman: Dismemberer ------
 
   * * *
 
