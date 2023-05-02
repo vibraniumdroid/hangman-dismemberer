@@ -1,4 +1,4 @@
-# Program   : Hangman: Dismemberer
+# Program   : Hangman Dismemberer
 # File      : abuhamda_hangman_dismemberer_v1_02.py
 # Author    : Abdallah Abuhamda
 # Instructor: David Baker
