@@ -49,34 +49,34 @@ def get_terminal_command():
         else:
             return [] # fallback to no terminal command
 
-# Prompt user to load game locally or from internet
-print("Select an option [1/2]:")
-print("[1] Load game from local file")
-print("[2] Load game from online file")
 
-try:
-    option = int(input("Enter option number: "))
-except ValueError:
-    print("Error! Invalid option entered. Please enter a valid number.")
-    exit()
-
-# Launch script based on user input
-if option == 1:
-    # Load game from local file
+while True:
     try:
-        file_name = input("Enter the path to your file: ")
-        launch_local(file_name)
+        # Prompt user to choose online or local file
+        print("\n[1] Load game from local file")
+        print("[2] Load game from online file")
+        print("[0] Quit launcher")
+        option = int(input("Select an option [0-2]: "))
+        if option < 0 or option > 2:
+            print("Invalid option. Please enter a number between 0 and 2.")
+        elif option == 1:
+            # Load game from local file
+            file_name = input("Enter the path to your file: ")
+            launch_local(file_name)
+        elif option == 2:
+            # Load game from online file
+            print("Leave empty and enter to use default URL")
+            url = input("Enter the URL to the online file: ")
+            if not url:
+                url = "https://raw.githubusercontent.com/vibraniumdroid/hangman-dismemberer/main/abuhamda_hangman_dismemberer_v2_00.py"
+            launch_online(url)
+        elif option == 0:
+            # Quit launcher
+            print("Goodbye!")
+            break
+    except ValueError:
+        print("Invalid input. Please enter a number between 0 and 2.")
+    except KeyboardInterrupt:
+        print("\nYou pressed \"CTRL-C\". You may enter 0 to close the launcher.")
     except:
-        print("Error! Could not launch the game from local file. Check file path and ensure file exists.")
-elif option == 2:
-    # Load game from online file
-    print("Leave empty and enter to use default URL")
-    try:
-        url = input(f"Enter the URL to the online file: ")
-        if not url:
-            url = "https://raw.githubusercontent.com/vibraniumdroid/hangman-dismemberer/main/abuhamda_hangman_dismemberer_v2_00.py"
-        launch_online(url)
-    except:
-        print("Error! Could not launch the game from online file. Check internet connection and ensure URL is correct.")
-else:
-    print("Error! Invalid option entered. Please enter a valid number.")
+        print("Error! Could not launch game.")
