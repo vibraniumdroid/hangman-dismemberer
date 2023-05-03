@@ -67,11 +67,9 @@ class Perpetrator:
     
     # Sets ip
     def set_ip(self, ip):
-        self.insanity_points = ip
+        self.insanity_points = ip        
 
-import os
-import platform         
-
+        
 # For printing various things in larger forms
 def print_large_letters(usr_string, indent=0):
     """
