@@ -13,7 +13,7 @@ import urllib.request
 
 # Functions to launch game
 def launch_local(file_name):
-    """Launches the game from a local file."""
+    """Launches the game from local file"""
     if not os.path.exists(file_name):
         print("File not found.")
     else:
@@ -21,7 +21,7 @@ def launch_local(file_name):
         subprocess.Popen(launch_command)
 
 def launch_online(url):
-    """Launches the game from an online URL."""
+    """Launches the game from online address"""
     try:
         response = urllib.request.urlopen(url)
         script_content = response.read().decode()
@@ -30,10 +30,10 @@ def launch_online(url):
         launch_command = get_terminal_command() + ["python", "temp.py"]
         subprocess.Popen(launch_command)
     except:
-        print("Error: Could not download game from URL. Check launcher and ensure correct url is set.")
+        print("Error! Could not download game from URL. Check launcher and ensure correct url is set.")
 
 def get_terminal_command():
-    """Returns the command to launch a terminal emulator on the current platform."""
+    """Returns platform command to launch terminal on current platform."""
     if platform.system() == "Windows":
         return ["cmd", "/c", "start", "cmd.exe", "/k"]
     elif platform.system() == "Darwin":
