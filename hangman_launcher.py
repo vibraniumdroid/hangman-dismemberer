@@ -66,7 +66,7 @@ elif option == "2":
     print("Leave empty and enter to use default URL")
     url = input(f"Enter the URL to the online file: ")
     if not url:
-        url = "https://raw.githubusercontent.com/vibraniumdroid/hangman-dismemberer/main/abuhamda_hangman_dismemberer_v1_02.py"
+        url = "https://raw.githubusercontent.com/vibraniumdroid/hangman-dismemberer/main/abuhamda_hangman_dismemberer_v2_00.py"
     launch_online(url)
 else:
     print("Error! Invalid option.")
