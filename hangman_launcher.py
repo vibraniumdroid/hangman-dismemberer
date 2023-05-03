@@ -54,19 +54,29 @@ print("Select an option [1/2]:")
 print("[1] Load game from local file")
 print("[2] Load game from online file")
 
-option = input("Enter option number: ")
+try:
+    option = int(input("Enter option number: "))
+except ValueError:
+    print("Error! Invalid option entered. Please enter a valid number.")
+    exit()
 
 # Launch script based on user input
-if option == "1":
+if option == 1:
     # Load game from local file
-    file_name = input("Enter the path to your file: ")
-    launch_local(file_name)
-elif option == "2":
+    try:
+        file_name = input("Enter the path to your file: ")
+        launch_local(file_name)
+    except:
+        print("Error! Could not launch the game from local file. Check file path and ensure file exists.")
+elif option == 2:
     # Load game from online file
     print("Leave empty and enter to use default URL")
-    url = input(f"Enter the URL to the online file: ")
-    if not url:
-        url = "https://raw.githubusercontent.com/vibraniumdroid/hangman-dismemberer/main/abuhamda_hangman_dismemberer_v2_00.py"
-    launch_online(url)
+    try:
+        url = input(f"Enter the URL to the online file: ")
+        if not url:
+            url = "https://raw.githubusercontent.com/vibraniumdroid/hangman-dismemberer/main/abuhamda_hangman_dismemberer_v2_00.py"
+        launch_online(url)
+    except:
+        print("Error! Could not launch the game from online file. Check internet connection and ensure URL is correct.")
 else:
-    print("Error! Invalid option.")
+    print("Error! Invalid option entered. Please enter a valid number.")
