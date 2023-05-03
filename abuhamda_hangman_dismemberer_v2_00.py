@@ -1,5 +1,5 @@
 # Program   : Hangman Dismemberer
-# File      : abuhamda_hangman_dismemberer_v1_02.py
+# File      : abuhamda_hangman_dismemberer_v2_00.py
 # Author    : Abdallah Abuhamda
 # Instructor: David Baker
 # Course    : CIS156, CGCC
@@ -642,8 +642,9 @@ if __name__ == '__main__':
     -Added support for online files
     -Set default .txt words list to an online file
     
-1_02:
+2_00:
     -Improved error checking with try... except
+        -Print specific messages based on error type
     
     -Improved UI with prompt_and_clear() function
      Now prompts user to press enter and then clears screen
@@ -659,10 +660,4 @@ if __name__ == '__main__':
     -Added fake loading screens with loading_dots() for better continuity
      
     -Added print_large_letters for better game introduction and menu label
-    
-     
-     
-     
-
-
 """
