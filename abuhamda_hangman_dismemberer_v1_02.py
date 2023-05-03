@@ -315,31 +315,20 @@ def print_ui(victim, perpetrator, spaced_progress = ""):
 
 def print_description():
     """Prints game description."""
-    print("""
------- Hangman: Dismemberer ------
+    print("""------ Hangman: Dismemberer ------
+In this CLI game, you play as the victim and try to guess the hidden word 
+before the perpetrator dismembers you.
 
-A thrilling and fully-featured CLI game played as the victim, trying to guess 
-the hidden word before the perpetrator dismembers them.
-
-**Instructions:**
-
-- You start with 10 HP, which is directly tied to the number of limbs and 
-accessories you have.
-
+- You start with 10 HP, which is tied to the number of limbs and accessories 
+  you have.
 - Each incorrect guess results in the perpetrator dismembering a body part or 
-taking an accessory, reducing your HP.
-
-- When playing with longer words (> 4 letters):
-
-  - If you guess a letter correctly, the perpetrator gains 1 IP.
-  - If you guess three letters consecutively, the perpetrator's IP will reach 
-    a critical point, and you'll have the chance to attempt escape.
-  - If you choose to take the opportunity and guess one more letter, you can 
-    escape and reveal the hidden word to beat the game.
-  - But if you guess incorrectly, you'll take critical damage, reducing your HP.
-
-**Survive long enough to guess the hidden word and escape the perpetrator**
-""")
+  taking an accessory, reducing your HP.
+- If you guess a letter correctly, it will be revealed in the hidden word.
+- If you guess three letters consecutively, you'll have the chance to attempt 
+  escape. Guess one more letter to escape and beat the game, or take the risk 
+  of guessing incorrectly and losing HP.
+- Survive long enough to guess the hidden word and escape the perpetrator.
+    """)
 
 # Function for fake loading screen
 def loading_dots(seconds, num_dots=3):
