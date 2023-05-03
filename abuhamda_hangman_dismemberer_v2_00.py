@@ -316,18 +316,13 @@ def print_ui(victim, perpetrator, spaced_progress = ""):
 def print_description():
     """Prints game description."""
     print("""------ Hangman: Dismemberer ------
-In this CLI game, you play as the victim and try to guess the hidden word 
-before the perpetrator dismembers you.
+Play as the victim and guess the hidden word before the perpetrator dismembers 
+you. 
 
-- You start with 10 HP, which is tied to the number of limbs and accessories 
-  you have.
-- Each incorrect guess results in the perpetrator dismembering a body part or 
-  taking an accessory, reducing your HP.
-- If you guess a letter correctly, it will be revealed in the hidden word.
-- If you guess three letters consecutively, you'll have the chance to attempt 
-  escape. Guess one more letter to escape and beat the game, or take the risk 
-  of guessing incorrectly and losing HP.
-- Survive long enough to guess the hidden word and escape the perpetrator.
+- You start with 10 HP, which decreases with incorrect guesses.
+- Correct guesses reveal letters in the hidden word.
+- Guess three letters consecutively to attempt escape and beat the game early.
+- Survive to guess the hidden word and escape the perpetrator.
     """)
 
 # Function for fake loading screen
